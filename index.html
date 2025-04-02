@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Numbers in Range</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Prime Numbers in Range</h1>
+        <div class="input-section">
+            <label for="start">Start:</label>
+            <input type="number" id="start" placeholder="Enter start range" min="1">
+            <label for="end">End:</label>
+            <input type="number" id="end" placeholder="Enter end range" min="1">
+            <button onclick="calculatePrimes()">Calculate</button>
+        </div>
+        <div id="results" class="results">
+            <h2>Results</h2>
+            <p><strong>Total Time:</strong> <span id="totalTime">0</span> ms</p>
+            <p><strong>Average Time (All Numbers):</strong> <span id="avgAll">0</span> ms</p>
+            <p><strong>Average Time (Primes):</strong> <span id="avgPrimes">0</span> ms</p>
+            <p><strong>Primes Found:</strong> <span id="primesList">-</span></p>
+            <button onclick="showDetails()" id="detailsBtn" disabled>Details</button>
+        </div>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <div class="tabs">
+                <button class="tablink active" onclick="openTab('all')">All Numbers</button>
+                <button class="tablink" onclick="openTab('primes')">Primes</button>
+            </div>
+            <div id="all" class="tabcontent active">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>Result</th>
+                            <th>Time (ms)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="allTable"></tbody>
+                </table>
+            </div>
+            <div id="primes" class="tabcontent">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>Time (ms)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="primesTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
